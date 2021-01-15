@@ -25,26 +25,20 @@ procedure ludo is
       Road : Integer;
    end record;
    
-   task Red_Player;
+   Board  : My_Array(1..11, 1..11);
+   
+   
+   task Red_Player;   
    task Blue_Player;
    task Yellow_Player;
    task Green_Player;
    task Game is
       entry Start;
       entry Stop;
-      entry Launch_Pawn;
+      entry Launch_Pawn(P: Pawn);
       entry Set_Pawns(P1: Pawn; P2: Pawn; P3: Pawn; P4: Pawn);
+      entry Print_Board(Tab: My_Array);
    end Game;
-   procedure Printer (NTab : in My_Array);
-   procedure Printer (NTab : in My_Array) is
-   begin
-      for I in NTab'Range(1) loop
-         for J in NTab'Range(2) loop
-            Put(NTab(I,J));
-         end loop;
-         Put_Line("");
-      end loop;
-   end Printer;
    
    function generate_random_number return Integer is
       type randRange is new Integer range 1..6;
@@ -58,14 +52,6 @@ procedure ludo is
       return num;
    end generate_random_number;
    
-      --  procedure set_Pawns (n1: in Pawn; n2 : in Pionek; n3 : in Pionek; n4 : in Pionek) is
-   --  begin
-   --     Board(n1.X, n1.Y) := n1.Pawn_Name;
-   --     Board(n2.X, n2.Y) := n2.Pawn_Name;
-   --     Board(n3.X, n3.Y) := n3.Pawn_Name;
-   --     Board(n4.X, n4.Y) := n4.Pawn_Name;
-   --  end set_Pawns;
-   
    task body Red_Player is
       R1 : Pawn := (1, Ada.Strings.Unbounded.To_Unbounded_String ("R1"), 1, 1, 0);
       R2 : Pawn := (2, Ada.Strings.Unbounded.To_Unbounded_String ("R2"), 1, 2, 0);
@@ -73,7 +59,6 @@ procedure ludo is
       R4 : Pawn := (4, Ada.Strings.Unbounded.To_Unbounded_String ("R4"), 2, 2, 0);
    begin
       null;
-      --  set_Pawns(R1, R2, R3, R4);
    end Red_Player;
 
    task body Blue_Player is
@@ -103,15 +88,16 @@ procedure ludo is
       null;
    end Green_Player;
    task body Game is
-      Board  : My_Array(1..11, 1..11);
-      Num : Integer;
+      
    begin
       accept Start;
+      Put_Line("start setting table");      
       for I in Board'Range(1) loop
          for J in Board'Range(2) loop
             Board(I,J) := Ada.Strings.Unbounded.To_Unbounded_String (" O");
          end loop;
       end loop;
+
 
       Board (1,3) := Ada.Strings.Unbounded.To_Unbounded_String ("  ");
       Board (1,4) := Ada.Strings.Unbounded.To_Unbounded_String ("  ");
@@ -187,17 +173,18 @@ procedure ludo is
       Board (7,6) := Ada.Strings.Unbounded.To_Unbounded_String (" +");
       Board (8,6) := Ada.Strings.Unbounded.To_Unbounded_String (" +");
       Board (9,6) := Ada.Strings.Unbounded.To_Unbounded_String (" +");
+   
       Board (10,6) := Ada.Strings.Unbounded.To_Unbounded_String (" +");
 
       Board (6,6) := Ada.Strings.Unbounded.To_Unbounded_String (" X");
    
-    
-      Printer(Board);
-      Num := generate_random_number;
-      Put_Line(Num'Img);
+      Put_Line("end setting table");
+      
+      --  Game.Print_Board(Board);
+      
       loop
          select
-            accept Launch_Pawn do
+            accept Launch_Pawn(P: Pawn) do
                null;
             end Launch_Pawn;
          or
@@ -207,6 +194,15 @@ procedure ludo is
                Board(P3.X, P3.Y) := P3.Pawn_Name;
                Board(P4.X, P4.Y) := P4.Pawn_Name;
             end Set_Pawns;
+         or
+            accept Print_Board(Tab: My_Array) do
+               for I in Tab'Range(1) loop
+                  for J in Tab'Range(2) loop
+                     Put(Tab(I,J));
+                  end loop;
+                  Put_Line("");
+               end loop;
+            end Print_Board;
          or
             accept Stop;
             exit;
