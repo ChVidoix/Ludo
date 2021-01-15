@@ -206,6 +206,5 @@ procedure ludo is
       end loop;
    end Game;
 begin
-   Game.Start;
-   Game.Stop;
+   null;
 end ludo;
