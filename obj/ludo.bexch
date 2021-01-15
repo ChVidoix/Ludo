@@ -1,0 +1,22 @@
+[GENERATED OBJECT FILE]
+b__ludo.o
+[PROJECT FILES]
+D:\n\programowanie\pwir\ludo\ludo.gpr
+20210114195818 c7937a0b9519f0c0d3fbf933986a513d
+[BOUND OBJECT FILES]
+D:\n\programowanie\pwir\ludo\obj\ludo.o
+[GENERATED SOURCE FILES]
+b__ludo.ads
+b__ludo.adb
+b__ludo.ali
+[RESULTING OPTIONS]
+-LD:\n\programowanie\pwir\ludo\obj\
+-LD:\n\programowanie\pwir\ludo\obj\
+-LD:/p/gnat/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/
+-static
+-static-libgcc
+D:/p/gnat/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/libgnarl.a
+D:/p/gnat/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/libgnat.a
+-Xlinker
+--stack=0x200000,0x1000
+-mthreads
