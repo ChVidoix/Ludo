@@ -37,7 +37,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#73d3e8a9#;
+   u00001 : constant Version_32 := 16#0da02f3c#;
    pragma Export (C, u00001, "ludoB");
    u00002 : constant Version_32 := 16#67c8d842#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -483,10 +483,14 @@ package ada_main is
    pragma Export (C, u00222, "system__tasking__stagesB");
    u00223 : constant Version_32 := 16#6153a6f3#;
    pragma Export (C, u00223, "system__tasking__stagesS");
-   u00224 : constant Version_32 := 16#eca5ecae#;
-   pragma Export (C, u00224, "system__memoryB");
-   u00225 : constant Version_32 := 16#6bdde70c#;
-   pragma Export (C, u00225, "system__memoryS");
+   u00224 : constant Version_32 := 16#65de8d35#;
+   pragma Export (C, u00224, "system__val_intB");
+   u00225 : constant Version_32 := 16#875fe85b#;
+   pragma Export (C, u00225, "system__val_intS");
+   u00226 : constant Version_32 := 16#eca5ecae#;
+   pragma Export (C, u00226, "system__memoryB");
+   u00227 : constant Version_32 := 16#6bdde70c#;
+   pragma Export (C, u00227, "system__memoryS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -665,6 +669,8 @@ package ada_main is
    --  system.task_primitives%s
    --  system.val_uns%s
    --  system.val_uns%b
+   --  system.val_int%s
+   --  system.val_int%b
    --  system.win32.ext%s
    --  system.os_primitives%s
    --  system.os_primitives%b

@@ -17,13 +17,13 @@ RV NO_IMPLICIT_LOOPS
 RV NO_ELABORATION_CODE
 RV NO_OBSOLESCENT_FEATURES
 
-U ada_main%b		b__ludo.adb		e12615e1 OO PK IL
+U ada_main%b		b__ludo.adb		831253b6 OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W system%s		system.ads		system.ali
 W system.restrictions%s	s-restri.adb		s-restri.ali
 
-U ada_main%s		b__ludo.ads		64c6e214 EE NE OO PK IL
+U ada_main%s		b__ludo.ads		68d6f511 EE NE OO PK IL
 W system%s		system.ads		system.ali
 W system.parameters%s	s-parame.adb		s-parame.ali
 W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
@@ -31,8 +31,8 @@ W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 D ada.ads		20200819050644 76789da1 ada%s
 D a-except.ads		20200819050644 a7106115 ada.exceptions%s
 D a-unccon.ads		20200819050644 0e9b276f ada.unchecked_conversion%s
-D b__ludo.ads		20210115212618 8a0e1eac ada_main%s
-D b__ludo.adb		20210115212618 d7a56c2a ada_main%b
+D b__ludo.ads		20210116021822 861e09a9 ada_main%s
+D b__ludo.adb		20210116021822 b9813d78 ada_main%b
 D system.ads		20200819050648 32a08138 system%s
 D s-parame.ads		20200819050648 4752c4cb system.parameters%s
 D s-restri.ads		20200819050648 1b9d0672 system.restrictions%s
@@ -53,7 +53,7 @@ X 1 ada.ads
 X 2 a-except.ads
 48K13*Exceptions 335e19 5|8w10
 X 4 b__ludo.ads
-6K9*ada_main 719l5 719e13 5|10b14 364l5 364t13
+6K9*ada_main 725l5 725e13 5|10b14 364l5 364t13
 8i4*gnat_argc{integer} 12m22 12r22 5|336r10 337m10
 9m4*gnat_argv{6|67M9} 13m22 13r22 5|338m10
 10m4*gnat_envp{6|67M9} 14m22 14r22 5|340m7
@@ -86,7 +86,7 @@ X 4 b__ludo.ads
 . 416r22 418r22 420r22 422r22 424r22 426r22 428r22 430r22 432r22 434r22 436r22
 . 438r22 440r22 442r22 444r22 446r22 448r22 450r22 452r22 454r22 456r22 458r22
 . 460r22 462r22 464r22 466r22 468r22 470r22 472r22 474r22 476r22 478r22 480r22
-. 482r22 484r22 486r22 488r22
+. 482r22 484r22 486r22 488r22 490r22 492r22
 40m4*u00001{39M9} 41r22
 42m4*u00002{39M9} 43r22
 44m4*u00003{39M9} 45r22
@@ -312,6 +312,8 @@ X 4 b__ludo.ads
 484m4*u00223{39M9} 485r22
 486m4*u00224{39M9} 487r22
 488m4*u00225{39M9} 489r22
+490m4*u00226{39M9} 491r22
+492m4*u00227{39M9} 493r22
 X 5 b__ludo.adb
 12i4 E074{short_integer} 12m46 12r46 256m7 256r15
 13i4 E010{short_integer} 13m46 13r46 262m7 262r15
