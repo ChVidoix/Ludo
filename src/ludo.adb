@@ -48,6 +48,8 @@ procedure ludo is
    Coords : Point;
    c      : Character;
    rand   : Integer;
+   pawn_num   : Integer;
+   Absolute : Integer;
    
    procedure Clear_Screen is
    begin
@@ -104,12 +106,42 @@ procedure ludo is
             
             Pawns(I).Is_Active := True;
             Board(Coords.X, Coords.Y) := (Pawns(I).Name, False);
+            Board(Pawns(I).Coord.X, Pawns(I).Coord.Y) := (Ada.Strings.Unbounded.To_Unbounded_String (" O"), True);
+            Pawns(I).Coord := Coords;
             exit;
             
          end if;
          <<Continue>>
       end loop;
    end Launch_Pawn;
+   
+   
+   procedure Move_Pawn(P : in out Pawn; jump : Integer) is
+   begin
+      P.Road := P.Road + jump;
+      Put_Line(P.Road'Img);
+      Absolute := Integer(10*(P.ID mod 4) + P.Road + 1);
+      if Absolute > 40 then
+         Absolute := Absolute - 40;
+      end if;
+      Board(P.Coord.X, P.Coord.Y) := (Ada.Strings.Unbounded.To_Unbounded_String (" O"), True);
+      P.Coord := Trace(Absolute);
+      Board(P.Coord.X, P.Coord.Y) := (P.Name, False);
+   end Move_Pawn;
+   
+   
+   procedure Introduce_Player(P : Pawn) is
+   begin   
+      Put_Line(" ");
+      case p.ID is
+         when 0      => Put_Line("Red Player Turn");
+         when 1      => Put_Line("Blue Player Turn");
+         when 2      => Put_Line("Yellow Player Turn");
+         when 3      => Put_Line("Green Player Turn");
+         when others => null;
+      end case;
+      Put_Line(" ");
+   end Introduce_Player;
    
    
    procedure Decide(Players_Pawns : in out Pawn_List; Num : in out Integer) is
@@ -132,6 +164,8 @@ procedure ludo is
       
       <<Can_Decide>>
       Print_Board(Board);
+      Introduce_Player(Players_Pawns(1));
+      Put_Line("You have " & Num'Img & " eyelets at the ankle");
       Put_Line("Give number of your choice");
       Put_Line("1. Move pawn");
       if Num = 6 then
@@ -142,8 +176,16 @@ procedure ludo is
       
       case Decision is
          when 1 => 
-            Put_Line("Which pawn would you like to move? Give the name");
-            null;
+            <<Select_Pawn>>
+            Put_Line("Which pawn would you like to move? Give the number");
+            pawn_num := Integer'Value(Get_Line);
+            if Players_Pawns(pawn_num).Is_Active = True then
+               Move_Pawn(Players_Pawns(pawn_num), Num);
+            else
+               Put_Line("You can't move that pawn, enter correct pawn");   
+               goto Select_Pawn;
+            end if;
+
          when 2 =>
             Coords := Trace(Integer(10*(Players_Pawns(1).ID mod 4) + 1));
             if Board(Coords.X, Coords.Y).Is_Available = True then
@@ -163,26 +205,6 @@ procedure ludo is
       waiter := (Players_Pawns(1).ID+1) mod 4;
       <<Next_Player>>
    end Decide;
-   
-   
-   procedure Move_Pawn(P : Pawn) is
-   begin
-      null;
-   end Move_Pawn;
-   
-   
-   procedure Introduce_Player(P : Pawn) is
-   begin   
-      Put_Line(" ");
-      case p.ID is
-         when 0      => Put_Line("Red Player Turn");
-         when 1      => Put_Line("Blue Player Turn");
-         when 2      => Put_Line("Yellow Player Turn");
-         when 3      => Put_Line("Green Player Turn");
-         when others => null;
-      end case;
-      Put_Line(" ");
-   end Introduce_Player;
    
    
    procedure Player_Turn(Pawns: in out Pawn_List) is
