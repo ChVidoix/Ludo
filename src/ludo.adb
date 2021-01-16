@@ -42,13 +42,22 @@ procedure ludo is
    
    Board  : My_Array(1..11, 1..11);
    Trace  : My_Vector(1..40);
-   Okres : constant Ada.Real_Time.Time_Span := Ada.Real_Time.Milliseconds(80);
-   waiter : Integer := 1;
+   Okres  : constant Ada.Real_Time.Time_Span := Ada.Real_Time.Milliseconds(80);
+   waiter : Integer := 0;
+   Tmp_W  : Integer;
    Coords : Point;
-   c : Character;
+   c      : Character;
+   rand   : Integer;
+   
+   procedure Clear_Screen is
+   begin
+      Ada.Text_IO.Put(ASCII.ESC & "[2J");
+   end Clear_Screen;
+   
    
    procedure Print_Board (Tab : My_Array) is
    begin
+      Clear_Screen;
       for I in Tab'Range(1) loop
          for J in Tab'Range(2) loop
             Put(Tab(I,J).Label);
@@ -64,43 +73,96 @@ procedure ludo is
    task Game is
       entry Start;
       entry Stop;
-      entry Set_Pawns(P1: Pawn; P2: Pawn; P3: Pawn; P4: Pawn);
+      entry Set_Pawns(Pawns : Pawn_List);
    end Game;
 
    
-   function generate_random_number return Integer is
+   function Dice_Roll return Integer is
       type randRange is new Integer range 1..6;
       package Rand_Int is new ada.numerics.discrete_random(randRange);
       use Rand_Int;
       gen : Rand_Int.Generator;
       num : Integer;
    begin
+      Put_Line("Press enter to roll the dice");
+      Get_Immediate(c);
+      c := Character'Val(0);
+      
       reset(gen);
       num := Integer(Rand_Int.Random(gen));
       return num;
-   end generate_random_number;
+   end Dice_Roll;
 
    
-   procedure Launch_Pawn(Pawns: in out Pawn_List) is
+   procedure Launch_Pawn(Pawns : in out Pawn_List; Num : in out Integer) is
    begin
                
       for I in Integer range 1..4 loop
          if Pawns(I).Is_Active = True then
             goto Continue;
          else
-            Coords := Trace(Integer(Pawns(I).Road + 10*(Pawns(I).ID mod 4) + 1));
-            if Board(Coords.X, Coords.Y).Is_Available = True then
-               Pawns(I).Is_Active := True;
-               Board(Coords.X, Coords.Y) := (Pawns(I).Name, False);
-               exit;
-            else
-               Put_Line("You can't introduce new pawn to the game");
-               --  decide what to do again
-            end if;
+            
+            Pawns(I).Is_Active := True;
+            Board(Coords.X, Coords.Y) := (Pawns(I).Name, False);
+            exit;
+            
          end if;
          <<Continue>>
       end loop;
    end Launch_Pawn;
+   
+   
+   procedure Decide(Players_Pawns : in out Pawn_List; Num : in out Integer) is
+      Decision : Integer;
+   begin
+      
+      for I in Integer range 1..4 loop
+         if Players_Pawns(I).Is_Active = True or Num = 6 then
+            goto Can_Decide;
+         end if;
+      end loop;
+      
+      Put_Line("Sorry, you don't have any moves");
+      Put_Line("Press enter to give the dice to the next player");
+      Get_Immediate(c);
+      c := Character'Val(0);
+      waiter := ((Players_Pawns(1).ID+1) mod 4);
+      goto Next_Player;
+      
+      
+      <<Can_Decide>>
+      Print_Board(Board);
+      Put_Line("Give number of your choice");
+      Put_Line("1. Move pawn");
+      if Num = 6 then
+         Put_Line("2. Introduce new pawn to the game");
+      end if;
+      
+      Decision := Integer'Value(Get_Line);
+      
+      case Decision is
+         when 1 => 
+            Put_Line("Which pawn would you like to move? Give the name");
+            null;
+         when 2 =>
+            Coords := Trace(Integer(10*(Players_Pawns(1).ID mod 4) + 1));
+            if Board(Coords.X, Coords.Y).Is_Available = True then
+               Launch_Pawn(Players_Pawns, Num);
+            else
+               goto Can_Decide;
+            end if;   
+               
+         when others =>
+            Put_Line("Please, give correct number");
+            goto Can_Decide;
+      end case;
+      
+      Put_Line("Press enter to give the dice to the next player");
+      Get_Immediate(c);
+      c := Character'Val(0);
+      waiter := (Players_Pawns(1).ID+1) mod 4;
+      <<Next_Player>>
+   end Decide;
    
    
    procedure Move_Pawn(P : Pawn) is
@@ -109,174 +171,93 @@ procedure ludo is
    end Move_Pawn;
    
    
-   
-   procedure Decide(Num : Integer; Players_Pawns : in out Pawn_List) is
-      Decision : Integer;
-   begin
-      
-      for I in Integer range 1..4 loop
-         if Players_Pawns(I).Is_Active = True then
-            goto Can_Decide;
-         end if;
-      end loop;
-      
-      Put_Line("Sorry, you don't have any moves");
-      waiter := (Players_Pawns(1).ID mod 4) + 2;
-      goto Next_Player;
-      
-      <<Can_Decide>>
-      Print_Board(Board);
-      Put_Line("Print number of your choice");
-      Put_Line("1. Move pawn");
-      if Num = 6 then
-         Put_Line("2. Introduce new pawn tothe game");
-      end if;  
-      
-      <<Again>>
-      Decision := Integer'Value(Get_Line);
-      
-      case Decision is
-         when 1 => 
-            Put_Line("Which pawn would you like to move? Give the name");
-            null;
-         when 2 =>
-            Launch_Pawn(Players_Pawns);
-         when others =>
-            Put_Line("Please, give correct number");
-            goto Again;
+   procedure Introduce_Player(P : Pawn) is
+   begin   
+      Put_Line(" ");
+      case p.ID is
+         when 0      => Put_Line("Red Player Turn");
+         when 1      => Put_Line("Blue Player Turn");
+         when 2      => Put_Line("Yellow Player Turn");
+         when 3      => Put_Line("Green Player Turn");
+         when others => null;
       end case;
-      <<Next_Player>>
-   end Decide;
+      Put_Line(" ");
+   end Introduce_Player;
    
    
-   
-   procedure Clear_Screen is
+   procedure Player_Turn(Pawns: in out Pawn_List) is
    begin
-      Ada.Text_IO.Put(ASCII.ESC & "[2J");
-   end Clear_Screen;
+      if waiter = (Pawns(1).ID mod 4) then
+         
+         Print_Board(Board);
+         Introduce_Player(Pawns(1));
+         
+         rand := Dice_Roll;
+         Put_Line("Your number: " & rand'img);
+         Tmp_W := Pawns(1).ID mod 4;
+         
+         Decide(Pawns, rand);
+
+      else
+         delay 1.0;
+      end if;
+   end Player_Turn;
    
    
    task body Red_Player is
-      rand  : Integer;
+      
       R1    : Pawn := (0, Ada.Strings.Unbounded.To_Unbounded_String ("R1"), (1, 1), 0, False);
       R2    : Pawn := (4, Ada.Strings.Unbounded.To_Unbounded_String ("R2"), (1, 2), 0, False);
       R3    : Pawn := (8, Ada.Strings.Unbounded.To_Unbounded_String ("R3"), (2, 1), 0, False);
       R4    : Pawn := (12, Ada.Strings.Unbounded.To_Unbounded_String ("R4"), (2, 2), 0, False);
       Red_Pawns : Pawn_List := (R1, R2, R3, R4);
    begin
-      Game.Set_Pawns(R1, R2, R3, R4);
+      Game.Set_Pawns(Red_Pawns);
       loop
-         if waiter = 1 then
-            Clear_Screen;
-            Put_Line(" ");
-            Put_Line("Red Player Turn");
-            Put_Line(" ");
-            Put_Line("Press enter to roll the dice");
-            Get_Immediate(c);
-            rand :=generate_random_number;
-            Put_Line("Your number: " & rand'img);
-            Decide(rand, Red_Pawns);            
-            Print_Board(Board);
-            Put_Line("Press enter to give the dive to the next player");
-            Get_Immediate(c);
-            waiter := 2;
-         else
-            delay 5.0;
-         end if;
+         Player_Turn(Red_Pawns);
       end loop;
    end Red_Player;
 
    
    task body Blue_Player is
-      rand : Integer;
       B1   : Pawn := (1, Ada.Strings.Unbounded.To_Unbounded_String ("B1"), (1, 10), 0, False);
       B2   : Pawn := (5, Ada.Strings.Unbounded.To_Unbounded_String ("B2"), (1, 11), 0, False);
       B3   : Pawn := (9, Ada.Strings.Unbounded.To_Unbounded_String ("B3"), (2, 10), 0, False);
       B4   : Pawn := (13, Ada.Strings.Unbounded.To_Unbounded_String ("B4"), (2, 11), 0, False);
       Blue_Pawns : Pawn_List := (B1, B2, B3, B4);
    begin
-      Game.Set_Pawns(B1, B2, B3, B4);
+      Game.Set_Pawns(Blue_Pawns);
       loop
-         if waiter = 2 then
-            Clear_Screen;
-            Put_Line(" ");
-            Put_Line("Blue Player Turn");
-            Put_Line(" ");
-            Put_Line("Press enter to roll the dice");
-            Get_Immediate(c);
-            rand :=generate_random_number;
-            Put_Line("Your number: " & rand'img);
-            Decide(rand, Blue_Pawns);            
-            Print_Board(Board);
-            Put_Line("Press enter to give the dive to the next player");
-            Get_Immediate(c);
-            waiter := 3;
-         else
-            delay 5.0;
-         end if;
+         Player_Turn(Blue_Pawns);
       end loop;
+      
    end Blue_Player;
 
    
    task body Yellow_Player is
-      rand : Integer;
-      Y1 : Pawn := (2,  Ada.Strings.Unbounded.To_Unbounded_String ("Y1"), (10, 1), 0, False);
-      Y2 : Pawn := (6, Ada.Strings.Unbounded.To_Unbounded_String ("Y2"), (10, 2), 0, False);
-      Y3 : Pawn := (10, Ada.Strings.Unbounded.To_Unbounded_String ("Y3"), (11, 1), 0, False);
-      Y4 : Pawn := (14, Ada.Strings.Unbounded.To_Unbounded_String ("Y4"), (11, 2), 0, False);
+      Y1 : Pawn := (2,  Ada.Strings.Unbounded.To_Unbounded_String ("Y1"), (10, 10), 0, False);
+      Y2 : Pawn := (6, Ada.Strings.Unbounded.To_Unbounded_String ("Y2"), (10, 11), 0, False);
+      Y3 : Pawn := (10, Ada.Strings.Unbounded.To_Unbounded_String ("Y3"), (11, 10), 0, False);
+      Y4 : Pawn := (14, Ada.Strings.Unbounded.To_Unbounded_String ("Y4"), (11, 11), 0, False);
       Yellow_Pawns : Pawn_List := (Y1, Y2, Y3, Y4);
    begin
-      Game.Set_Pawns(Y1, Y2, Y3, Y4);
+      Game.Set_Pawns(Yellow_Pawns);
       loop
-         if waiter = 3 then
-            Clear_Screen;
-            Put_Line(" ");
-            Put_Line("Yellow Player Turn");
-            Put_Line(" ");
-            Put_Line("Press enter to roll the dice");
-            Get_Immediate(c);
-            rand :=generate_random_number;
-            Put_Line("Your number: " & rand'img);
-            Decide(rand, Yellow_Pawns);
-            Print_Board(Board);
-            Put_Line("Press enter to give the dive to the next player");
-            Get_Immediate(c);
-            waiter := 4;
-         else
-            delay 5.0;
-         end if;
+         Player_Turn(Yellow_Pawns);
       end loop;
    end Yellow_Player;
 
    
    task body Green_Player is
-      rand : Integer;
-      G1 : Pawn := (3, Ada.Strings.Unbounded.To_Unbounded_String ("G1"), (10, 10), 0, False);
-      G2 : Pawn := (7, Ada.Strings.Unbounded.To_Unbounded_String ("G2"), (10, 11), 0, False);
-      G3 : Pawn := (11, Ada.Strings.Unbounded.To_Unbounded_String ("G3"), (11, 10), 0, False);
-      G4 : Pawn := (15, Ada.Strings.Unbounded.To_Unbounded_String ("G4"), (11, 11), 0, False);
+      G1 : Pawn := (3, Ada.Strings.Unbounded.To_Unbounded_String ("G1"), (10, 1), 0, False);
+      G2 : Pawn := (7, Ada.Strings.Unbounded.To_Unbounded_String ("G2"), (10, 2), 0, False);
+      G3 : Pawn := (11, Ada.Strings.Unbounded.To_Unbounded_String ("G3"), (11, 1), 0, False);
+      G4 : Pawn := (15, Ada.Strings.Unbounded.To_Unbounded_String ("G4"), (11, 2), 0, False);
       Green_Pawns : Pawn_List := (G1, G2, G3, G4);
    begin
-      Game.Set_Pawns(G1, G2, G3, G4);
+      Game.Set_Pawns(Green_Pawns);
       loop
-         if waiter = 4 then
-            Clear_Screen;
-            Put_Line(" ");
-            Put_Line("Green Player Turn");
-            Put_Line(" ");
-            Put_Line("Press enter to roll the dice");
-            Get_Immediate(c);
-            rand :=generate_random_number;
-            Put_Line("Your number: " & rand'img);
-            Decide(rand, Green_Pawns);            
-            Launch_Pawn(Green_Pawns);
-            Print_Board(Board);
-            Put_Line("Press enter to give the dive to the next player");
-            Get_Immediate(c);
-            waiter := 1;
-         else
-            delay 5.0;
-         end if;
+         Player_Turn(Green_Pawns);
       end loop;
    end Green_Player;
    
@@ -412,11 +393,10 @@ procedure ludo is
       
       loop
          select
-            accept Set_Pawns(P1: Pawn; P2: Pawn; P3: Pawn; P4: Pawn) do
-               Board(P1.Coord.X, P1.Coord.Y) := (P1.Name, False);
-               Board(P2.Coord.X, P2.Coord.Y) := (P2.Name, False);
-               Board(P3.Coord.X, P3.Coord.Y) := (P3.Name, False);
-               Board(P4.Coord.X, P4.Coord.Y) := (P4.Name, False);
+            accept Set_Pawns(Pawns: Pawn_List) do
+               for I in Integer range 1..4 loop
+                  Board(Pawns(I).Coord.X, Pawns(I).Coord.Y) := (Pawns(I).Name, False); 
+               end loop;
             end Set_Pawns;
          or
             accept Stop;

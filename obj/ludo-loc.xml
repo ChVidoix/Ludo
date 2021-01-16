@@ -1,15 +1,6 @@
 <?xml version="1.0"?>
 <Locations >
-  <Project>
-    <vfs_file>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_file>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
-      <vfs_file>D:\n\programowanie\pwir\ludo\src\main.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
-      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
-    </file_marker>
+  <Project >
     <file_marker column=" 4" line=" 3" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.ads</vfs_file>
@@ -102,175 +93,711 @@
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 65" line=" 159" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 29" line=" 160" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 16" line=" 207" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 50" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 3" line=" 48" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 7" line=" 42" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 11" line=" 17" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 109" line=" 19" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 50" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 50" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 11" line=" 17" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 209" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 34" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 34" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 50" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 50" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 50" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 78" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 47" line=" 51" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 13" line=" 54" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 7" line=" 52" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 13" line=" 54" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 7" line=" 51" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 13" line=" 54" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 14" line=" 207" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 13" line=" 54" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 21" line=" 55" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 14" line=" 58" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 51" line=" 50" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 30" line=" 58" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 21" line=" 55" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 21" line=" 58" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 14" line=" 207" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 26" line=" 44" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 19" line=" 46" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 39" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 13" line=" 38" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 4" line=" 34" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 25" line=" 115" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 20" line=" 37" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 20" line=" 111" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 20" line=" 112" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 4" line=" 39" >
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 93" line=" 260" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 42" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 25" line=" 185" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 44" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 266" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 44" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 15" line=" 159" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 44" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 15" line=" 159" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 15" line=" 159" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 44" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 14" line=" 21" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 49" line=" 41" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 375" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 42" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 258" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 81" line=" 164" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 78" line=" 165" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 76" line=" 195" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 83" line=" 260" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 419" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 422" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 419" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 419" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 18" line=" 19" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 419" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 419" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 18" line=" 19" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 40" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 21" line=" 287" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 42" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 419" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 167" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 32" line=" 244" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 32" line=" 244" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 36" line=" 43" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 39" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 38" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 62" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 49" line=" 293" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 44" line=" 297" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 45" line=" 343" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 417" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 27" line=" 207" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 66" line=" 100" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 97" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 66" line=" 100" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 97" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 38" line=" 96" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 97" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 43" line=" 101" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 32" line=" 92" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 101" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 92" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 107" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 43" line=" 146" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 34" line=" 121" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 146" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 37" line=" 181" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 34" line=" 121" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 146" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 20" line=" 149" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 34" line=" 121" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 25" line=" 138" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 159" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 157" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 148" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 25" line=" 153" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 181" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 148" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 25" line=" 153" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 148" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 29" line=" 127" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 49" line=" 132" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 135" >
+      <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
+      <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 13" line=" 178" >
       <vfs_project>D:\n\programowanie\pwir\ludo\ludo.gpr</vfs_project>
       <vfs_file>D:\n\programowanie\pwir\ludo\src\ludo.adb</vfs_file>
     </file_marker>
