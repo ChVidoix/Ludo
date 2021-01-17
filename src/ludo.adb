@@ -44,12 +44,12 @@ procedure ludo is
    Board  : My_Array(1..11, 1..11);
    Trace  : My_Vector(1..40);
    Okres  : constant Ada.Real_Time.Time_Span := Ada.Real_Time.Milliseconds(80);
-   waiter : Integer := 0;
+   waiter : Integer := -1;
    Tmp_W  : Integer;
    Coords : Point;
    c      : Character;
    rand   : Integer;
-   pawn_num : Integer := 123123;
+   pawn_num : Integer;
    Absolute : Integer;
    Tmp_Label: Ada.Strings.Unbounded.Unbounded_String;
    
@@ -122,8 +122,7 @@ procedure ludo is
    
    procedure Beat_Pawn(P : in out Pawn; New_Point : in Point) is
    begin
-         
-      Put_Line("wszedłem do beat pawn");
+
       Tmp_Label := Board(New_Point.X, New_Point.Y).Label;
                
       for I in Integer range 1..16 loop
@@ -140,7 +139,7 @@ procedure ludo is
    end Beat_Pawn;
 
    
-   procedure Launch_Pawn(Pawns : in out Pawn_List; Num : in out Integer; New_Coords : in out Point; ID : Integer) is
+   procedure Launch_Pawn(Pawns : in out Pawn_List; New_Coords : in out Point; ID : Integer) is
    begin
                
       for I in Integer range (ID*4+1)..(ID*4+4) loop
@@ -155,9 +154,10 @@ procedure ludo is
                Pawns(I).Coord := Coords;
                exit;
             else
+               Pawns(I).Is_Active := True;
                Beat_Pawn(Pawns(I), New_Coords);
+               exit;
             end if;
-              
             
          end if;
          <<Continue>>
@@ -235,7 +235,7 @@ procedure ludo is
             Put_Line("Which pawn would you like to move? Give the number");
             
             pawn_num := Integer'Value(Get_Line);
-            if All_Pawns(4*ID + pawn_num).Is_Active = True then
+            if All_Pawns(4*ID + pawn_num).Is_Active = True and pawn_num > 0 and pawn_num < 5 then
                Move_Pawn(All_Pawns(4*ID + pawn_num), Num);
             else
                Put_Line("You can't move that pawn, enter correct pawn");   
@@ -244,12 +244,16 @@ procedure ludo is
 
          when 2 =>
             Coords := Trace(Integer(10*ID + 1));
-            if Board(Coords.X, Coords.Y).Is_Available = True then
-               Launch_Pawn(All_Pawns, Num, Coords, ID);
-            else
-               goto Can_Decide;
-            end if;
-               
+            for I in Integer range (ID*4+1)..(ID*4+4) loop
+               if All_Pawns(I).Is_Active = False then
+                  Launch_Pawn(All_Pawns, Coords, ID);
+                  goto End_Launch;
+               end if;
+            end loop;
+            
+            Put_Line("You don't have any pawn to introduce");
+            goto Can_Decide;
+            <<End_Launch>>
          when others =>
             Put_Line("Please, give the correct number");
             goto Can_Decide;
@@ -446,6 +450,8 @@ procedure ludo is
       Trace(38) := (7,2);
       Trace(39) := (7,1);
       Trace(40) := (6,1);
+      
+      waiter := 0;
       
       loop
          select
