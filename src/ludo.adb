@@ -24,11 +24,12 @@ procedure ludo is
    end record;
 
    type Pawn is record
-      ID        : Integer;
-      Name      : Ada.Strings.Unbounded.Unbounded_String;
-      Coord     : Point;
-      Road      : Integer;
-      Is_Active : Boolean;
+      ID         : Integer;
+      Name       : Ada.Strings.Unbounded.Unbounded_String;
+      Coord      : Point;
+      Basic_Coord: Point;
+      Road       : Integer;
+      Is_Active  : Boolean;
    end record;
 
    type Field is record
@@ -36,7 +37,7 @@ procedure ludo is
       Is_Available : Boolean;
    end record;
    
-   type Pawn_List is array(1..4) of Pawn;
+   type Pawn_List is array(Integer range <>) of Pawn;
    type My_Array is array(Integer range <>, Integer range <>) of Field;
    type My_Vector is array(Integer range <>) of Point;
    
@@ -48,8 +49,32 @@ procedure ludo is
    Coords : Point;
    c      : Character;
    rand   : Integer;
-   pawn_num   : Integer;
+   pawn_num : Integer := 123123;
    Absolute : Integer;
+   Tmp_Label: Ada.Strings.Unbounded.Unbounded_String;
+   
+   
+   R1    : Pawn := (0, Ada.Strings.Unbounded.To_Unbounded_String ("R1"), (1, 1), (1, 1), 0, False);
+   R2    : Pawn := (4, Ada.Strings.Unbounded.To_Unbounded_String ("R2"), (1, 2), (1, 2), 0, False);
+   R3    : Pawn := (8, Ada.Strings.Unbounded.To_Unbounded_String ("R3"), (2, 1), (2, 1), 0, False);
+   R4    : Pawn := (12, Ada.Strings.Unbounded.To_Unbounded_String ("R4"), (2, 2), (2, 2), 0, False);
+   
+   B1   : Pawn := (1, Ada.Strings.Unbounded.To_Unbounded_String ("B1"), (1, 10), (1, 10), 0, False);
+   B2   : Pawn := (5, Ada.Strings.Unbounded.To_Unbounded_String ("B2"), (1, 11), (1, 11), 0, False);
+   B3   : Pawn := (9, Ada.Strings.Unbounded.To_Unbounded_String ("B3"), (2, 10), (2, 10), 0, False);
+   B4   : Pawn := (13, Ada.Strings.Unbounded.To_Unbounded_String ("B4"), (2, 11), (2, 11), 0, False);
+   
+   Y1 : Pawn := (2,  Ada.Strings.Unbounded.To_Unbounded_String ("Y1"), (10, 10), (10, 10), 0, False);
+   Y2 : Pawn := (6, Ada.Strings.Unbounded.To_Unbounded_String ("Y2"), (10, 11), (10, 11), 0, False);
+   Y3 : Pawn := (10, Ada.Strings.Unbounded.To_Unbounded_String ("Y3"), (11, 10), (11, 10), 0, False);
+   Y4 : Pawn := (14, Ada.Strings.Unbounded.To_Unbounded_String ("Y4"), (11, 11), (11, 11), 0, False);
+   
+   G1 : Pawn := (3, Ada.Strings.Unbounded.To_Unbounded_String ("G1"), (10, 1), (10, 1), 0, False);
+   G2 : Pawn := (7, Ada.Strings.Unbounded.To_Unbounded_String ("G2"), (10, 2), (10, 2), 0, False);
+   G3 : Pawn := (11, Ada.Strings.Unbounded.To_Unbounded_String ("G3"), (11, 1), (11, 1), 0, False);
+   G4 : Pawn := (15, Ada.Strings.Unbounded.To_Unbounded_String ("G4"), (11, 2), (11, 2), 0, False);
+   
+   All_Pawns : Pawn_List(1..16) := (R1, R2, R3, R4, B1, B2, B3, B4, Y1, Y2, Y3, Y4, G1, G2, G3, G4);
    
    procedure Clear_Screen is
    begin
@@ -94,21 +119,45 @@ procedure ludo is
       num := Integer(Rand_Int.Random(gen));
       return num;
    end Dice_Roll;
+   
+   procedure Beat_Pawn(P : in out Pawn; New_Point : in Point) is
+   begin
+         
+      Put_Line("wszedłem do beat pawn");
+      Tmp_Label := Board(New_Point.X, New_Point.Y).Label;
+               
+      for I in Integer range 1..16 loop
+         if Tmp_Label = All_Pawns(I).Name then
+            Board(All_Pawns(I).Basic_Coord.X, All_Pawns(I).Basic_Coord.Y) := (All_Pawns(I).Name, False);
+            All_Pawns(I).Coord := All_Pawns(I).Basic_Coord;
+            All_Pawns(I).Road := 0;
+            All_Pawns(I).Is_Active := False;
+            Board(P.Coord.X, P.Coord.Y) := (Ada.Strings.Unbounded.To_Unbounded_String (" O"), True);
+            Board(New_Point.X, New_Point.Y) := (P.Name, False);
+            P.Coord := New_Point;
+         end if;
+      end loop;
+   end Beat_Pawn;
 
    
-   procedure Launch_Pawn(Pawns : in out Pawn_List; Num : in out Integer) is
+   procedure Launch_Pawn(Pawns : in out Pawn_List; Num : in out Integer; New_Coords : in out Point; ID : Integer) is
    begin
                
-      for I in Integer range 1..4 loop
+      for I in Integer range (ID*4+1)..(ID*4+4) loop
          if Pawns(I).Is_Active = True then
             goto Continue;
          else
-            
-            Pawns(I).Is_Active := True;
-            Board(Coords.X, Coords.Y) := (Pawns(I).Name, False);
-            Board(Pawns(I).Coord.X, Pawns(I).Coord.Y) := (Ada.Strings.Unbounded.To_Unbounded_String (" O"), True);
-            Pawns(I).Coord := Coords;
-            exit;
+            if Board(New_Coords.X, New_Coords.Y).Is_Available = True then
+               
+               Pawns(I).Is_Active := True;
+               Board(New_Coords.X, New_Coords.Y) := (Pawns(I).Name, False);
+               Board(Pawns(I).Basic_Coord.X, Pawns(I).Basic_Coord.Y) := (Ada.Strings.Unbounded.To_Unbounded_String (" O"), True);
+               Pawns(I).Coord := Coords;
+               exit;
+            else
+               Beat_Pawn(Pawns(I), New_Coords);
+            end if;
+              
             
          end if;
          <<Continue>>
@@ -119,21 +168,26 @@ procedure ludo is
    procedure Move_Pawn(P : in out Pawn; jump : Integer) is
    begin
       P.Road := P.Road + jump;
-      Put_Line(P.Road'Img);
       Absolute := Integer(10*(P.ID mod 4) + P.Road + 1);
       if Absolute > 40 then
          Absolute := Absolute - 40;
       end if;
-      Board(P.Coord.X, P.Coord.Y) := (Ada.Strings.Unbounded.To_Unbounded_String (" O"), True);
-      P.Coord := Trace(Absolute);
-      Board(P.Coord.X, P.Coord.Y) := (P.Name, False);
+      
+      if Board(Trace(Absolute).X, Trace(Absolute).Y).Is_Available = True then
+         Board(P.Coord.X, P.Coord.Y) := (Ada.Strings.Unbounded.To_Unbounded_String (" O"), True);
+         P.Coord := Trace(Absolute);
+         Board(P.Coord.X, P.Coord.Y) := (P.Name, False);
+      else
+         Beat_Pawn(P, Trace(Absolute));
+      end if;
+      
    end Move_Pawn;
    
-   
-   procedure Introduce_Player(P : Pawn) is
+      
+   procedure Introduce_Player(ID : Integer) is
    begin   
       Put_Line(" ");
-      case p.ID is
+      case ID is
          when 0      => Put_Line("Red Player Turn");
          when 1      => Put_Line("Blue Player Turn");
          when 2      => Put_Line("Yellow Player Turn");
@@ -144,12 +198,12 @@ procedure ludo is
    end Introduce_Player;
    
    
-   procedure Decide(Players_Pawns : in out Pawn_List; Num : in out Integer) is
+   procedure Decide(All_Pawns : in out Pawn_List; Num : in out Integer; ID: in out Integer) is
       Decision : Integer;
    begin
       
-      for I in Integer range 1..4 loop
-         if Players_Pawns(I).Is_Active = True or Num = 6 then
+      for I in Integer range (4*ID+1)..(4*ID+4) loop
+         if All_Pawns(I).Is_Active = True or Num = 6 then
             goto Can_Decide;
          end if;
       end loop;
@@ -158,67 +212,69 @@ procedure ludo is
       Put_Line("Press enter to give the dice to the next player");
       Get_Immediate(c);
       c := Character'Val(0);
-      waiter := ((Players_Pawns(1).ID+1) mod 4);
+      waiter := (ID+1) mod 4;
       goto Next_Player;
       
       
       <<Can_Decide>>
       Print_Board(Board);
-      Introduce_Player(Players_Pawns(1));
+      Introduce_Player(ID);
       Put_Line("You have " & Num'Img & " eyelets at the ankle");
       Put_Line("Give number of your choice");
       Put_Line("1. Move pawn");
       if Num = 6 then
          Put_Line("2. Introduce new pawn to the game");
       end if;
-      
+
       Decision := Integer'Value(Get_Line);
-      
+
+
       case Decision is
          when 1 => 
             <<Select_Pawn>>
             Put_Line("Which pawn would you like to move? Give the number");
+            
             pawn_num := Integer'Value(Get_Line);
-            if Players_Pawns(pawn_num).Is_Active = True then
-               Move_Pawn(Players_Pawns(pawn_num), Num);
+            if All_Pawns(4*ID + pawn_num).Is_Active = True then
+               Move_Pawn(All_Pawns(4*ID + pawn_num), Num);
             else
                Put_Line("You can't move that pawn, enter correct pawn");   
                goto Select_Pawn;
             end if;
 
          when 2 =>
-            Coords := Trace(Integer(10*(Players_Pawns(1).ID mod 4) + 1));
+            Coords := Trace(Integer(10*ID + 1));
             if Board(Coords.X, Coords.Y).Is_Available = True then
-               Launch_Pawn(Players_Pawns, Num);
+               Launch_Pawn(All_Pawns, Num, Coords, ID);
             else
                goto Can_Decide;
-            end if;   
+            end if;
                
          when others =>
-            Put_Line("Please, give correct number");
+            Put_Line("Please, give the correct number");
             goto Can_Decide;
       end case;
       
       Put_Line("Press enter to give the dice to the next player");
       Get_Immediate(c);
       c := Character'Val(0);
-      waiter := (Players_Pawns(1).ID+1) mod 4;
+      waiter := (ID+1) mod 4;
       <<Next_Player>>
    end Decide;
    
    
-   procedure Player_Turn(Pawns: in out Pawn_List) is
+   procedure Player_Turn(Pawns: in out Pawn_List; Player_ID: in out Integer) is
    begin
-      if waiter = (Pawns(1).ID mod 4) then
+      if waiter = Player_ID then
          
          Print_Board(Board);
-         Introduce_Player(Pawns(1));
+         Introduce_Player(Player_ID);
          
          rand := Dice_Roll;
          Put_Line("Your number: " & rand'img);
-         Tmp_W := Pawns(1).ID mod 4;
+         Tmp_W := Player_ID;
          
-         Decide(Pawns, rand);
+         Decide(Pawns, rand, Player_ID);
 
       else
          delay 1.0;
@@ -227,59 +283,37 @@ procedure ludo is
    
    
    task body Red_Player is
-      
-      R1    : Pawn := (0, Ada.Strings.Unbounded.To_Unbounded_String ("R1"), (1, 1), 0, False);
-      R2    : Pawn := (4, Ada.Strings.Unbounded.To_Unbounded_String ("R2"), (1, 2), 0, False);
-      R3    : Pawn := (8, Ada.Strings.Unbounded.To_Unbounded_String ("R3"), (2, 1), 0, False);
-      R4    : Pawn := (12, Ada.Strings.Unbounded.To_Unbounded_String ("R4"), (2, 2), 0, False);
-      Red_Pawns : Pawn_List := (R1, R2, R3, R4);
+      Red_ID: Integer := 0;
    begin
-      Game.Set_Pawns(Red_Pawns);
       loop
-         Player_Turn(Red_Pawns);
+         Player_Turn(All_Pawns, Red_ID);
       end loop;
    end Red_Player;
 
    
    task body Blue_Player is
-      B1   : Pawn := (1, Ada.Strings.Unbounded.To_Unbounded_String ("B1"), (1, 10), 0, False);
-      B2   : Pawn := (5, Ada.Strings.Unbounded.To_Unbounded_String ("B2"), (1, 11), 0, False);
-      B3   : Pawn := (9, Ada.Strings.Unbounded.To_Unbounded_String ("B3"), (2, 10), 0, False);
-      B4   : Pawn := (13, Ada.Strings.Unbounded.To_Unbounded_String ("B4"), (2, 11), 0, False);
-      Blue_Pawns : Pawn_List := (B1, B2, B3, B4);
+      Blue_ID: Integer := 1;
    begin
-      Game.Set_Pawns(Blue_Pawns);
       loop
-         Player_Turn(Blue_Pawns);
+         Player_Turn(All_Pawns, Blue_ID);
       end loop;
-      
    end Blue_Player;
 
    
    task body Yellow_Player is
-      Y1 : Pawn := (2,  Ada.Strings.Unbounded.To_Unbounded_String ("Y1"), (10, 10), 0, False);
-      Y2 : Pawn := (6, Ada.Strings.Unbounded.To_Unbounded_String ("Y2"), (10, 11), 0, False);
-      Y3 : Pawn := (10, Ada.Strings.Unbounded.To_Unbounded_String ("Y3"), (11, 10), 0, False);
-      Y4 : Pawn := (14, Ada.Strings.Unbounded.To_Unbounded_String ("Y4"), (11, 11), 0, False);
-      Yellow_Pawns : Pawn_List := (Y1, Y2, Y3, Y4);
+      Yellow_ID: Integer := 2;
    begin
-      Game.Set_Pawns(Yellow_Pawns);
       loop
-         Player_Turn(Yellow_Pawns);
+         Player_Turn(All_Pawns, Yellow_ID);
       end loop;
    end Yellow_Player;
 
    
    task body Green_Player is
-      G1 : Pawn := (3, Ada.Strings.Unbounded.To_Unbounded_String ("G1"), (10, 1), 0, False);
-      G2 : Pawn := (7, Ada.Strings.Unbounded.To_Unbounded_String ("G2"), (10, 2), 0, False);
-      G3 : Pawn := (11, Ada.Strings.Unbounded.To_Unbounded_String ("G3"), (11, 1), 0, False);
-      G4 : Pawn := (15, Ada.Strings.Unbounded.To_Unbounded_String ("G4"), (11, 2), 0, False);
-      Green_Pawns : Pawn_List := (G1, G2, G3, G4);
+      Green_ID: Integer := 3;
    begin
-      Game.Set_Pawns(Green_Pawns);
       loop
-         Player_Turn(Green_Pawns);
+         Player_Turn(All_Pawns, Green_ID);
       end loop;
    end Green_Player;
    
@@ -416,7 +450,7 @@ procedure ludo is
       loop
          select
             accept Set_Pawns(Pawns: Pawn_List) do
-               for I in Integer range 1..4 loop
+               for I in Integer range 1..16 loop
                   Board(Pawns(I).Coord.X, Pawns(I).Coord.Y) := (Pawns(I).Name, False); 
                end loop;
             end Set_Pawns;
@@ -428,5 +462,6 @@ procedure ludo is
    end Game;
 begin
    Game.Start;
+   Game.Set_Pawns(All_Pawns);
    Game.Stop;
 end ludo;
