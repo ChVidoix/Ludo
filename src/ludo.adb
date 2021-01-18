@@ -39,7 +39,6 @@ procedure ludo is
 
    Board  : My_Array(1..11, 1..11);
    Trace  : My_Vector(1..40);
-   Okres  : constant Ada.Real_Time.Time_Span := Ada.Real_Time.Milliseconds(80);
    waiter : Integer := -1;
    Tmp_W  : Integer;
    Coords : Point;
@@ -49,25 +48,26 @@ procedure ludo is
    Absolute : Integer;
    Tmp_Label: Ada.Strings.Unbounded.Unbounded_String;
 
-   R1    : Pawn := (0, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[91m" & " R1 " & ESC & "[0m"), (1, 1), (1, 1), 0, False);
-   R2    : Pawn := (4, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[91m" & " R2 " & ESC & "[0m"), (1, 2), (1, 2), 0, False);
-   R3    : Pawn := (8, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[91m" & " R3 " & ESC & "[0m"), (2, 1), (2, 1), 0, False);
-   R4    : Pawn := (12, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[91m" & " R4 " & ESC & "[0m"), (2, 2), (2, 2), 0, False);
 
-   B1   : Pawn := (1, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[94m" & " B1 " & ESC & "[0m"), (1, 10), (1, 10), 0, False);
-   B2   : Pawn := (5, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[94m" & " B2 " & ESC & "[0m"), (1, 11), (1, 11), 0, False);
-   B3   : Pawn := (9, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[94m" & " B3 " & ESC & "[0m"), (2, 10), (2, 10), 0, False);
-   B4   : Pawn := (13, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[94m" & " B4 " & ESC & "[0m"), (2, 11), (2, 11), 0, False);
+      R1    : Pawn := (0, Ada.Strings.Unbounded.To_Unbounded_String (" R1 "), (1, 1), (1, 1), 0, False);
+      R2    : Pawn := (4, Ada.Strings.Unbounded.To_Unbounded_String (" R2 "), (1, 2), (1, 2), 0, False);
+      R3    : Pawn := (8, Ada.Strings.Unbounded.To_Unbounded_String (" R3 "), (2, 1), (2, 1), 0, False);
+      R4    : Pawn := (12, Ada.Strings.Unbounded.To_Unbounded_String (" R4 "), (2, 2), (2, 2), 0, False);
 
-   Y1 : Pawn := (2,  Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[93m" & " Y1 " & ESC & "[0m"), (10, 10), (10, 10), 0, False);
-   Y2 : Pawn := (6, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[93m" & " Y2 " & ESC & "[0m"), (10, 11), (10, 11), 0, False);
-   Y3 : Pawn := (10, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[93m" & " Y3 " & ESC & "[0m"), (11, 10), (11, 10), 0, False);
-   Y4 : Pawn := (14, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[93m" & " Y4 " & ESC & "[0m"), (11, 11), (11, 11), 0, False);
+      B1   : Pawn := (1, Ada.Strings.Unbounded.To_Unbounded_String (" B1 "), (1, 10), (1, 10), 0, False);
+      B2   : Pawn := (5, Ada.Strings.Unbounded.To_Unbounded_String (" B2 "), (1, 11), (1, 11), 0, False);
+      B3   : Pawn := (9, Ada.Strings.Unbounded.To_Unbounded_String (" B3 "), (2, 10), (2, 10), 0, False);
+      B4   : Pawn := (13, Ada.Strings.Unbounded.To_Unbounded_String (" B4 "), (2, 11), (2, 11), 0, False);
 
-   G1 : Pawn := (3, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[92m" & " G1 " & ESC & "[0m"), (10, 1), (10, 1), 0, False);
-   G2 : Pawn := (7, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[92m" & " G2 " & ESC & "[0m"), (10, 2), (10, 2), 0, False);
-   G3 : Pawn := (11, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[92m" & " G3 " & ESC & "[0m"), (11, 1), (11, 1), 0, False);
-   G4 : Pawn := (15, Ada.Strings.Unbounded.To_Unbounded_String (ESC & "[92m" & " G4 " & ESC & "[0m"), (11, 2), (11, 2), 0, False);
+      Y1 : Pawn := (2,  Ada.Strings.Unbounded.To_Unbounded_String (" Y1 "), (10, 10), (10, 10), 0, False);
+      Y2 : Pawn := (6, Ada.Strings.Unbounded.To_Unbounded_String (" Y2 "), (10, 11), (10, 11), 0, False);
+      Y3 : Pawn := (10, Ada.Strings.Unbounded.To_Unbounded_String (" Y3 "), (11, 10), (11, 10), 0, False);
+      Y4 : Pawn := (14, Ada.Strings.Unbounded.To_Unbounded_String (" Y4 "), (11, 11), (11, 11), 0, False);
+
+      G1 : Pawn := (3, Ada.Strings.Unbounded.To_Unbounded_String (" G1 "), (10, 1), (10, 1), 0, False);
+      G2 : Pawn := (7, Ada.Strings.Unbounded.To_Unbounded_String (" G2 "), (10, 2), (10, 2), 0, False);
+      G3 : Pawn := (11, Ada.Strings.Unbounded.To_Unbounded_String (" G3 "), (11, 1), (11, 1), 0, False);
+      G4 : Pawn := (15, Ada.Strings.Unbounded.To_Unbounded_String (" G4 "), (11, 2), (11, 2), 0, False);
 
    All_Pawns : Pawn_List(1..16) := (R1, R2, R3, R4, B1, B2, B3, B4, Y1, Y2, Y3, Y4, G1, G2, G3, G4);
 
@@ -163,6 +163,31 @@ procedure ludo is
       end loop;
    end Launch_Pawn;
 
+   procedure Color_Pawns is
+   begin
+      R1.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[90;101m" & "R1" & ESC & "[0m" & " ");
+      R2.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[90;101m" & "R2" & ESC & "[0m" & " ");
+      R3.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[90;101m" & "R3" & ESC & "[0m" & " ");
+      R4.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[90;101m" & "R4" & ESC & "[0m" & " ");
+
+      B1.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[97;104m" & "B1" & ESC & "[0m" & " ");
+      B2.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[97;104m" & "B2" & ESC & "[0m" & " ");
+      B3.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[97;104m" & "B3" & ESC & "[0m" & " ");
+      B4.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[97;104m" & "B4" & ESC & "[0m" & " ");
+
+      Y1.Name :=  Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[90;103m" & "Y1" & ESC & "[0m" & " ");
+      Y2.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[90;103m" & "Y2" & ESC & "[0m" & " ");
+      Y3.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[90;103m" & "Y3" & ESC & "[0m" & " ");
+      Y4.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[90;103m" & "Y4" & ESC & "[0m" & " ");
+
+      G1.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[90;102m" & "G1" & ESC & "[0m" & " ");
+      G2.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[90;102m" & "G2" & ESC & "[0m" & " ");
+      G3.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[90;102m" & "G3" & ESC & "[0m" & " ");
+      G4.Name := Ada.Strings.Unbounded.To_Unbounded_String (" " & ESC & "[90;102m" & "G4" & ESC & "[0m" & " ");
+
+      All_Pawns := (R1, R2, R3, R4, B1, B2, B3, B4, Y1, Y2, Y3, Y4, G1, G2, G3, G4);
+   end Color_Pawns;
+
 
    procedure Winning_Pawns (P : in out Pawn) is
    begin
@@ -200,6 +225,23 @@ procedure ludo is
       if P.ID = 15 then
          Board(10, 6) := (P.Name, False);
       end if;
+
+      P.Is_Active := False;
+      Board(P.Coord.X, P.Coord.Y) := (Ada.Strings.Unbounded.To_Unbounded_String (" O  "), True);
+
+      for I in Integer range (P.ID mod 4)*4+1..(P.ID mod 4)*4+1 loop
+         if P.Is_Active = True or P.Coord = P.Basic_Coord then
+            goto Keep_Playing;
+         end if;
+      end loop;
+
+      Put_Line("");
+      Put_Line("YOU WIN! CONGRATULATIONS");
+      delay 3.0;
+      Game.Stop;
+
+      <<Keep_Playing>>
+
    end Winning_Pawns;
 
 
@@ -211,6 +253,11 @@ procedure ludo is
          Absolute := Absolute - 40;
       end if;
 
+      if P.Road >= 40 then
+         Winning_Pawns(P);
+         goto Pawn_Won;
+      end if;
+
       if Board(Trace(Absolute).X, Trace(Absolute).Y).Is_Available = True then
          Board(P.Coord.X, P.Coord.Y) := (Ada.Strings.Unbounded.To_Unbounded_String (" O  "), True);
          P.Coord := Trace(Absolute);
@@ -218,9 +265,9 @@ procedure ludo is
       else
          Beat_Pawn(P, Trace(Absolute));
       end if;
-      if P.Road > 40 then
-         Winning_Pawns(P);
-      end if;
+
+      <<Pawn_Won>>
+
    end Move_Pawn;
 
 
@@ -270,6 +317,18 @@ procedure ludo is
 
       case Decision is
          when 1 =>
+
+            for I in Integer range ID*4+1 .. ID*4+4 loop
+               if All_Pawns(I).Is_Active = True then
+                  goto Select_Pawn;
+               end if;
+            end loop;
+
+            Put_Line("");
+            Put_Line("You don't have any pawns to move.");
+            delay 3.0;
+            goto Can_Decide;
+
             <<Select_Pawn>>
             Put_Line("Which pawn would you like to move? Give the number");
 
@@ -282,6 +341,11 @@ procedure ludo is
             end if;
 
          when 2 =>
+            if Num /= 6 then
+               Put_Line("You can't introduce new pawn to the game.");
+               goto Can_Decide;
+            end if;
+
             Coords := Trace(Integer(10*ID + 1));
             for I in Integer range (ID*4+1)..(ID*4+4) loop
                if All_Pawns(I).Is_Active = False then
@@ -510,6 +574,7 @@ procedure ludo is
    end Game;
 begin
    Game.Start;
+   Color_Pawns;
    Game.Set_Pawns(All_Pawns);
    Game.Stop;
 end ludo;
